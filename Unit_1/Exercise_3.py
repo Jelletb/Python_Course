@@ -67,11 +67,12 @@ if __name__ == '__main__':
     time = list()
     length = list()
 
-    for i in range(1, 100):
+    for i in range(1, 20):
         test = list(n.zeros(len(test)))
         test.append(3)
+        # Insert function to test
         x = wrapper(look_for_all_the_things, test)
-        x = timeit(x, number=100)
+        x = timeit(x, number=10)
         time.append(x)
         length.append(len(test))
 
