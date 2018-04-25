@@ -56,9 +56,9 @@ def yield_all_combos(items):
         bag1 = list()
         bag2 = list()
         for j in range(n):
-            if (i >> j) % 3 == 1:
+            if (i // (3 ** j)) % 3 == 1:
                 bag1.append(items[j])
-            elif (i >> j) % 3 == 2:
+            elif (i // (3 ** j)) % 3 == 2:
                 bag2.append(items[j])
         yield (bag1, bag2)
 
