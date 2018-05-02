@@ -18,10 +18,10 @@ def smart_fib(n, memo={}):
 
 
 if __name__ == '__main__':
-    # for i in range(0, 3):
+    # for i in range(0, 40):
     #     print('Fib({}) = '.format(i) + str(fib(i)))
 
-    for i in range(0, 120):
+    for i in range(0, 50000):
         print('Fib({}) = '.format(i) + str(smart_fib(i)))
 
 
