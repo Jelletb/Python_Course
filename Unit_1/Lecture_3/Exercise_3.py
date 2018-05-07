@@ -24,4 +24,20 @@ edges.append(Edge(g.getNode('CBA'), g.getNode('CAB')))
 for n in edges:
     g.addEdge(n)
 
-print(g)
+
+def DFS(graph, start, end, path, shortest):
+    path = path + [start]
+    if start == end:
+        return path
+    for node in graph.childrenOf(start):
+        if node not in path:
+            if shortest is None or len(path) < len(shortest):
+                new_path = DFS(graph, node, end, path, shortest)
+                if new_path is not None:
+                    shortest = new_path
+        else:
+            print('Already visited')
+    return shortest
+
+
+DFS(g, g.getNode("ABC"), g.getNode("CBA"), [], None)
